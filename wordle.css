@@ -45,9 +45,9 @@ button:hover {
 }
 
 .button-game {
-    width: 20vw;
+    width: 40vw;
     height: 7vw;
-    max-width: 200px;
+    max-width: 300px;
     max-height: 50px;
 }
 
@@ -63,10 +63,6 @@ main {
     margin: 0 auto;
     position: relative;
     height: 100vh;
-}
-
-#keyboard {
-    
 }
 
 .wordle {
