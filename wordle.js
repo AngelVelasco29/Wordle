@@ -1,6 +1,7 @@
 const keyboard= document.querySelector("#keyboard");
 const grid= document.querySelector("#grid");
 const divClue= document.querySelector(".clue");
+const wordleImage= document.querySelector(".wordle-img");
 const keyboardLetters =[
     ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"],
     ["a", "s", "d", "f", "g", "h", "j", "k", "l", "ñ"],
@@ -11,11 +12,6 @@ let myAnswer=[];
 let positions=[];
 const secretsWord=["amigos", "camino", "dinero", "letras","musica"];
 const randomWord = Math.floor(Math.random()*(secretsWord.length));
-
-
-
-
-console.log(secretsWord[randomWord])
 
 const rows=[]
 let attempts=0;
@@ -66,8 +62,8 @@ const checkWord= ()=>{
     if(attempts===5){
         alert("Ya no tienes intentos");
     }
-    attempts+=1;
     if(myAnswer.length===secretsWord[randomWord].length){
+        attempts+=1;
         for (let i = 0; i < secretsWord[randomWord].length; i++) {
             switch (true) {
                 case myAnswer[i] === secretsWord[randomWord][i]:
@@ -116,4 +112,14 @@ const pressLetter= ()=>{
         alert("Tu palabra ya esta completa");
     }
     
+}
+
+const reload=()=>{
+    location.reload();
+}
+
+const help=()=>{
+
+    wordleImage.src="image/"+secretsWord[randomWord]+".jpg";
+    wordleImage.classList.toggle("img-display");
 }
